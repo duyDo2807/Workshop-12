@@ -4,7 +4,7 @@
 
 int main() {
   Game myGame;
-  std::vector<GameEntity*> entities = myGame.getEntities();
+  std::vector<GameEntity*> entities = myGame.get_entities();
 
   std::cout << "Initial Game Entities:\n";
   for (auto entity : entities) {
@@ -16,7 +16,7 @@ int main() {
   myGame.gameLoop(5, 2.0);
 
   std::cout << "Game Entities after Simulation:\n";
-  for (auto entity : myGame.getEntities()) {
+  for (auto entity : myGame.get_entities()) {
     std::cout << "Type: " << entity->getType() << ", Position: ("
               << std::get<0>(entity->getPos()) << ", "
               << std::get<1>(entity->getPos()) << ")\n";
