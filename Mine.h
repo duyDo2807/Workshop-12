@@ -9,9 +9,9 @@ class Mine : public GameEntity {
   Mine(int x, int y) : GameEntity(x, y, 'M'){};
 
   Explosion explode() {
-    position = std::make_tuple(-1, -1);
+    std::tuple<int, int> currentPos = getPos();
     char newType = 'X';
-    return Explosion(std::get<0>(position), std::get<1>(position));
+    return Explosion(std::get<0>(currentPos), std::get<1>(currentPos));
   };
 };
 
